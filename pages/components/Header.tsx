@@ -5,7 +5,7 @@ import { useEffect,useState } from 'react';
 
 //bg-[#141414]
 const Header = () => {
-// function to set Sticky Navbar
+// function handleScroll is used to change color / sticky on scroll - start here
 const [isScroll,setIsScroll]=useState(false);
 
 const handleScroll=()=>{
