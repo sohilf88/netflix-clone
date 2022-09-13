@@ -25,7 +25,7 @@ useEffect(()=>{
 // function to set Sticky Navbar ends here
      
 return ( 
-    <div className="header-class">
+    <header className={`header-class ${isScroll && "bg-[#141414]"}`}>
         <span className="sm:hidden"><Link href="#">Browse</Link></span>
         <ul className="sm:flex space-x-5 hidden  ">
             <li className="hover:text-red-500 font-semibold" >
@@ -51,7 +51,7 @@ return (
                 
         </div>
             
-    </div>
+    </header>
   )
 }
 

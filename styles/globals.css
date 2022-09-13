@@ -4,6 +4,6 @@
 
 @layer components {
   .header-class {
-    @apply font-medium flex justify-between items-center  text-gray-700 h-[72px] px-14 absolute inset-0;
+    @apply font-medium flex justify-between items-center text-gray-400 h-[72px] px-14 fixed z-50 inset-0;
   }
 }
