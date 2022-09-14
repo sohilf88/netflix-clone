@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Header from "./components/Header"
 import requests from "./requests/requesturl"
-
+import Header from "./components/Header"
+import Banner from "./components/Banner"
 
 
 const Home: NextPage = () => {
@@ -10,6 +10,7 @@ const Home: NextPage = () => {
     
       <main>
         <Header></Header>
+        <Banner></Banner>
       
     
       </main>
