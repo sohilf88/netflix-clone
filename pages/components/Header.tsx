@@ -25,7 +25,7 @@ useEffect(()=>{
 // function to set Sticky Navbar ends here
      
 return ( 
-    <header className={`header-class ${isScroll && "bg-[#141414]"}`}>
+    <header className={`header-class ${isScroll && "bg-[#141414] transition duration-400"}`}>
         <span className="sm:hidden"><Link href="#">Browse</Link></span>
         <ul className="sm:flex space-x-5 hidden  ">
             <li className="hover:text-red-500 font-semibold" >
@@ -44,10 +44,10 @@ return (
                 <Link href="#">My List</Link>
             </li>
         </ul>
-        <div className="right-pane flex items-center gap-4 justify-center">
-            <IoSearch className="text-[25px] hidden sm:block hover:text-red-500"></IoSearch>
+        <div className="right-pane flex items-center gap-2 justify-center">
+            <IoSearch className="text-[16px] hidden sm:block hover:text-red-500"></IoSearch>
             <span className="md:inline-block hidden hover:text-red-500">Kids</span>
-            <HiBell className="text-[25px] hover:text-red-500"></HiBell>
+            <HiBell className="text-[16px] hover:text-red-500"></HiBell>
                 
         </div>
             
