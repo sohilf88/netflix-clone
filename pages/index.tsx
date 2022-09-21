@@ -1,10 +1,10 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 import requests from "./requests/requesturl";
-import Header from "./components/Header"
-import Banner from "./components/Banner"
-import { apiResponse } from './typscript/typescript'
-import SliderRow from './components/SliderRow';
+import Header from "./components/Header";
+import Banner from "./components/Banner";
+import { apiResponse } from './typscript/typescript';
+import SliderRow from "./components/sliderRow";
 
 type apiResponseProps={
     netflixOriginals:apiResponse[],
@@ -73,7 +73,7 @@ documentaries,
   <div>
     <Header />
     <main>
-      <Banner netflixOriginals={netflixOriginals} />
+    <Banner netflixOriginals={netflixOriginals} />
     <SliderRow title={"Trending Now"} movies={trendingNow} />
     <SliderRow title={"Top Rated"} movies={topRated}/>
     <SliderRow title={"Action Movies"} movies={actionMovies}/>

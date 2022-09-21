@@ -4,21 +4,14 @@ import MovieThumbnail from './MovieThumbnail';
 
 type apiResponseProps={
     title:string,
-    movies:apiResponse[]
+    movies:apiResponse[],
 }
-const SliderRow = ({title,movies}:apiResponseProps) => {
+
+
+const SliderRow = ({title, movies}:apiResponseProps) =>{
   return (
-    
     <div>
-        <h3>{title}</h3>
-        <div >
-        <BsCaretLeft/>
-        {movies.map((movie)=>{
-        return (<MovieThumbnail key={movie.id} movie={movie}/>)    
-    })}
         
-        <BsCaretRight/>
-        </div>
     </div>
   )
 }
