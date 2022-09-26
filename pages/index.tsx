@@ -4,7 +4,7 @@ import requests from "./requests/requesturl";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import { apiResponse } from './typscript/typescript';
-import SliderRow from "./components/sliderRow";
+import SliderRow from "./components/SliderRow";
 
 type apiResponseProps={
     netflixOriginals:apiResponse[],
@@ -72,15 +72,17 @@ documentaries,
 }:apiResponseProps) => (
   <div>
     <Header />
-    <main>
+    <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16 ">
     <Banner netflixOriginals={netflixOriginals} />
+    <section>
     <SliderRow title={"Trending Now"} movies={trendingNow} />
     <SliderRow title={"Top Rated"} movies={topRated}/>
     <SliderRow title={"Action Movies"} movies={actionMovies}/>
-    <SliderRow title={"comedy Movies"} movies={comedyMovies}/>
-    <SliderRow title={"horror Movies"} movies={horrorMovies}/>
+    <SliderRow title={"Comedy Movies"} movies={comedyMovies}/>
+    <SliderRow title={"Horror Movies"} movies={horrorMovies}/>
     <SliderRow title={"Roamnce Movies"} movies={romanceMovies}/>
     <SliderRow title={"Documentaries"} movies={documentaries}/>
+    </section>
     </main>
   </div>
 )
