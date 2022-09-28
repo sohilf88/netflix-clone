@@ -74,7 +74,7 @@ documentaries,
     <Header />
     <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16 ">
     <Banner netflixOriginals={netflixOriginals} />
-    <section>
+    <section className="md:space-y-24">
     <SliderRow title={"Trending Now"} movies={trendingNow} />
     <SliderRow title={"Top Rated"} movies={topRated}/>
     <SliderRow title={"Action Movies"} movies={actionMovies}/>

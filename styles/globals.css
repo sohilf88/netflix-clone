@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-[#141414] text-white h-32 !scrollbar !scrollbar-thumb-red-900 !scrollbar-track-gray-100 -z-10;
+  }
+  }
+
 @layer components {
   .header-class {
     @apply flex text-sm font-medium justify-between items-center text-white h-[56px] px-5 py-5 lg:px-10 lg:py-6 fixed z-50 inset-0;
