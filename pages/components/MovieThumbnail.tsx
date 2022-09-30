@@ -16,6 +16,7 @@ const MovieThumbnail = ({movie}:ImageProps) => {
        layout="fill"
        className="rounded"
        objectFit="cover"
+       alt=""
        />
     </div>
   )
