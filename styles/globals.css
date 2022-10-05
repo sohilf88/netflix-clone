@@ -18,4 +18,7 @@
   .input{
   @apply w-full inline-block px-3 py-3 rounded placeholder-[gray] outline-none focus:bg-[#454545] text-white bg-[#333333];
   }
+  .input-icons{
+  @apply absolute top-4 right-4 text-[#948e8e] hover:cursor-pointer hover:text-white transition;
+  }
 }
