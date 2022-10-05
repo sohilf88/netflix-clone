@@ -3,10 +3,20 @@ import Image from 'next/image'
 import Head from 'next/head'
 import {FiLock,FiUnlock} from "react-icons/fi"
 import {useState} from "react"
+import { useForm, SubmitHandler } from "react-hook-form";
 
+type IFormInput ={
+  email: string;
+  password: string;
+}
 const Login = () => {
+  const { register,
+    handleSubmit,
+    watch,
+    formState: { errors }, } = useForm<IFormInput>();
+  const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
     const [input,setInput]=useState(false)
-    console.log(input)
+    
 
   return (
     <div className="relative w-screen h-screen flex flex-col md:items-center md:justify-center md:bg-transparent ">
@@ -30,14 +40,25 @@ const Login = () => {
             
             />
         </div>
-        <form className="mt-24 px-4 mx-1 md:max-w-md z-10 space-y-7 md:mt-0 md:bg-black/75 py-20 md:py-14 md:px-14 md:rounded ">
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-24 px-4 mx-1 md:max-w-md z-10 space-y-7 md:mt-0 md:bg-black/75 py-20 md:py-14 md:px-14 md:rounded ">
             <h1 className="text-4xl font-semibold">Sign in</h1>
             <div className="space-y-4">
-                <input type="email" name="email" id="email" placeholder="Email or phone number" 
+                <input {...register("email",{required:true})} type="email" name="email" id="email" placeholder="Email or phone number" 
                 className="input "/>
+                  {errors.email && (
+              <p className=" w-full inline-block p-1 text-[13px] font-light  text-orange-500">
+                Please enter a valid email.
+              </p>
+            )}
+                
                 <div className="w-full inline-block relative">
-                <input type={input?"text":"password"} name="email" id="email" placeholder="Password" 
+                <input {...register("password",{required:true})} type={input?"text":"password"} placeholder="Password" 
                 className="input"/>
+                {errors.password && (
+              <p className="p-1 w-full inline-block text-[13px] font-light text-orange-500">
+                Your password must contain between 4 and 60 characters.
+              </p>
+            )}
                 {input?(<FiUnlock className="input-icons" onClick={()=>setInput(false)}/>):(<FiLock className="input-icons" onClick={()=>setInput(true)}/>)}
                 
                 </div>
