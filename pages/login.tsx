@@ -52,13 +52,14 @@ const Login = () => {
             )}
                 
                 <div className="w-full inline-block relative">
-                <input {...register("password",{required:true})} type={input?"text":"password"} placeholder="Password" 
+                <input {...register("password",{required:true,minLength:5,maxLength:12})} type={input?"text":"password"} placeholder="Password" 
                 className="input"/>
                 {errors.password && (
               <p className="p-1 w-full inline-block text-[13px] font-light text-orange-500">
-                Your password must contain between 4 and 60 characters.
+                Your password must contain between 5 and 12 characters.
               </p>
             )}
+            
                 {input?(<FiUnlock className="input-icons" onClick={()=>setInput(false)}/>):(<FiLock className="input-icons" onClick={()=>setInput(true)}/>)}
                 
                 </div>
