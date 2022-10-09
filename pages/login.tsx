@@ -4,17 +4,34 @@ import Head from 'next/head'
 import {FiLock,FiUnlock} from "react-icons/fi"
 import {useState} from "react"
 import { useForm, SubmitHandler } from "react-hook-form";
+import useAuth from './hooks/useAuth'
+
 
 type IFormInput ={
   email: string;
   password: string;
 }
 const Login = () => {
+  const {signIn,signUp} =useAuth();
+  const [login,setLogin]=useState(false)
   const { register,
     handleSubmit,
     watch,
-    formState: { errors }, } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
+   formState: { errors }, } = useForm<IFormInput>();
+  const onSubmit: SubmitHandler<IFormInput> = async(data) => {
+    console.log(data.email);
+    if(login){
+        await signIn(data.email,data.password)
+        
+      }
+      else{
+        await signUp(data.email,data.password)
+        
+      }
+    }
+    
+  
+  
     const [input,setInput]=useState(false)
     
 
