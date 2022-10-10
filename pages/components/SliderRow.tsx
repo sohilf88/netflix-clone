@@ -3,6 +3,7 @@ import {BsCaretLeft,BsCaretRight} from "react-icons/bs"
 import MovieThumbnail from './MovieThumbnail';
 import {useRef,useState} from "react";
 
+
 type apiResponseProps={
     title:string,
     movies:apiResponse[],
@@ -27,13 +28,18 @@ const SliderRow = ({title, movies}:apiResponseProps) =>{
       <h2>{title}</h2>
       <div className="relative group" >
         <BsCaretLeft className={` ${!isScroll && "hidden"} absolute h-7 w-7 hover:scale-125 top-0 bottom-0 m-auto left-2 transition duration-200 z-50 opacity-0 group-hover:opacity-100`} onClick={()=>handleClick("left")}/>
+        
         <div className="flex items-center space-x-0.5 overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2" ref={rowRef}>
          {
           movies.map((movie)=>(
+            
+            
             <MovieThumbnail key={movie.id} movie={movie}/>
+           
           ))
          }
         </div>
+        
         <BsCaretRight className={`absolute h-7 w-7 hover:scale-125 top-0 bottom-0 m-auto right-2 opacity-0 group-hover:opacity-100 transition duration-200 z-50 `} onClick={()=>handleClick("right")}/>
 
       </div>
