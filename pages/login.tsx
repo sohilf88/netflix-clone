@@ -13,6 +13,7 @@ type IFormInput ={
 }
 const Login = () => {
   const {signIn,signUp} =useAuth();
+  const [input,setInput]=useState(false)
   const [login,setLogin]=useState(false)
   const { register,
     handleSubmit,
@@ -32,7 +33,7 @@ const Login = () => {
     
   
   
-    const [input,setInput]=useState(false)
+    
     
 
   return (
@@ -83,10 +84,10 @@ const Login = () => {
                 
             </div>
             
-            <button className="w-full inline-block px-3 py-3 bg-[#E50914] rounded text-bold " type="submit">Sign in</button>
+            <button onClick={()=>setLogin(true)} className="w-full inline-block px-3 py-3 bg-[#E50914] rounded text-bold " type="submit">Sign in</button>
             <div className="text-[gray]">
           New to Netflix?{' '}
-          <button
+          <button onClick={()=>setLogin(false)}
             className="cursor-pointer text-white hover:underline"
            
             type="submit"

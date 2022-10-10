@@ -70,8 +70,8 @@ export const AuthProvider = ({children}:AuthProviderProps) => {
    //logout Function end
 
   }
-
-  onAuthStateChanged(auth, (user) => {
+  useEffect(()=>{
+onAuthStateChanged(auth, (user) => {
   if (user) {
     setUser(user);
     setLoading(false)
@@ -82,6 +82,8 @@ export const AuthProvider = ({children}:AuthProviderProps) => {
   }
   setInitialLoading(false)
 });
+  },[auth])
+  
 
  const memoedValue = useMemo(
     () => ({ user, signUp, signIn, error, loading, logOut }),

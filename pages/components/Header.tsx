@@ -2,11 +2,18 @@ import Link from "next/link"
 import {IoSearch} from "react-icons/io5"
 import { HiBell } from "react-icons/hi";
 import { useEffect,useState } from 'react';
+import useAuth from "../hooks/useAuth";
 
 //bg-[#141414]
 const Header = () => {
 // function handleScroll is used to change color / sticky on scroll - start here
 const [isScroll,setIsScroll]=useState(false);
+const {user,logOut}=useAuth()
+console.log(user?.email);
+
+
+
+
 
 const handleScroll=()=>{
     if(window.scrollY>0){
@@ -48,6 +55,16 @@ return (
             <IoSearch className="text-[16px] hidden sm:block hover:text-red-500"></IoSearch>
             <span className="md:inline-block hidden hover:text-red-500">Kids</span>
             <HiBell className="text-[16px] hover:text-red-500"></HiBell>
+            
+            <Link href="/account">
+          <img
+            src="/profile.png"
+            alt="profile"
+            className="cursor-pointer rounded z-[100] "
+            
+          />
+        </Link>
+        <button onClick={logOut} className="cursor-pointer hover:text-red-600 text-xs ml-2">Log out</button>
                 
         </div>
             
