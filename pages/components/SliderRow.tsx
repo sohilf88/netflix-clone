@@ -25,8 +25,8 @@ const SliderRow = ({title, movies}:apiResponseProps) =>{
   }
   return (
     <div className="h-40 space-y-0.5 md:space-y-2 text-xs md:text-xl lg:text-2xl">
-      <h2>{title}</h2>
-      <div className="relative group" >
+      <h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-2xl">{title}</h2>
+      <div className="relative group md:-ml-2" >
         <BsCaretLeft className={` ${!isScroll && "hidden"} absolute h-7 w-7 hover:scale-125 top-0 bottom-0 m-auto left-2 transition duration-200 z-50 opacity-0 group-hover:opacity-100`} onClick={()=>handleClick("left")}/>
         
         <div className="flex items-center space-x-0.5 overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2" ref={rowRef}>
@@ -43,9 +43,6 @@ const SliderRow = ({title, movies}:apiResponseProps) =>{
         <BsCaretRight className={`absolute h-7 w-7 hover:scale-125 top-0 bottom-0 m-auto right-2 opacity-0 group-hover:opacity-100 transition duration-200 z-50 `} onClick={()=>handleClick("right")}/>
 
       </div>
-
-
-
 
     </div>
    

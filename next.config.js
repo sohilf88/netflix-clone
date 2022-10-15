@@ -5,6 +5,11 @@ const nextConfig = {
   images: {
     domains: ["image.tmdb.org", "rb.gy"],
   },
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 };
 
 module.exports = nextConfig;

@@ -6,6 +6,8 @@ import Banner from "./components/Banner";
 import { apiResponse } from './typscript/typescript';
 import SliderRow from "./components/SliderRow";
 
+
+
 type apiResponseProps={
     netflixOriginals:apiResponse[],
     trendingNow:apiResponse[],
@@ -76,8 +78,10 @@ documentaries,
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
     <Header />
+    
     <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16 bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh] ">
     <Banner netflixOriginals={netflixOriginals} />
+   
     <section className="md:space-y-24">
     <SliderRow title={"Trending Now"} movies={trendingNow} />
     <SliderRow title={"Top Rated"} movies={topRated}/>
@@ -85,7 +89,9 @@ documentaries,
     <SliderRow title={"Comedy Movies"} movies={comedyMovies}/>
     <SliderRow title={"Horror Movies"} movies={horrorMovies}/>
     <SliderRow title={"Roamnce Movies"} movies={romanceMovies}/>
+    <section className="space-y-8 pb-20">
     <SliderRow title={"Documentaries"} movies={documentaries}/>
+    </section>
     </section>
     </main>
   </div>

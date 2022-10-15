@@ -5,6 +5,7 @@ import {FiLock,FiUnlock} from "react-icons/fi"
 import {useState} from "react"
 import { useForm, SubmitHandler } from "react-hook-form";
 import useAuth from './hooks/useAuth'
+import {useRouter} from "next/router";
 
 
 type IFormInput ={
@@ -12,6 +13,7 @@ type IFormInput ={
   password: string;
 }
 const Login = () => {
+  const router =useRouter()
   const {signIn,signUp} =useAuth();
   const [input,setInput]=useState(false)
   const [login,setLogin]=useState(false)
@@ -25,17 +27,12 @@ const Login = () => {
         await signIn(data.email,data.password)
         
       }
-      else{
-        await signUp(data.email,data.password)
+      // else{
+      //   await signUp(data.email,data.password)
         
-      }
+      // }
     }
-    
   
-  
-    
-    
-
   return (
     <div className="relative w-screen h-screen flex flex-col md:items-center md:justify-center md:bg-transparent ">
         <Head>
@@ -87,7 +84,7 @@ const Login = () => {
             <button onClick={()=>setLogin(true)} className="w-full inline-block px-3 py-3 bg-[#E50914] rounded text-bold " type="submit">Sign in</button>
             <div className="text-[gray]">
           New to Netflix?{' '}
-          <button onClick={()=>setLogin(false)}
+          <button onClick={()=>router.push("/signup")}
             className="cursor-pointer text-white hover:underline"
            
             type="submit"
