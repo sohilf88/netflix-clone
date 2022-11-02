@@ -38,3 +38,5 @@ video link netflix
 
 https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v
 https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v
+
+https://github.com/lukef7fywmrp/netflix-redesign
