@@ -6,6 +6,7 @@ import {BsFillPlayFill} from "react-icons/bs";
 import {HiInformationCircle} from "react-icons/hi";
 import { useDispatch } from 'react-redux';
 import {stateOfMovie} from "../features/movieState"
+import {OpenModal} from "../features/modalState"
 
 
 
@@ -33,7 +34,7 @@ const Banner = ({netflixOriginals}:propApi) => {
         {randomBanner?.overview}
       </p>
       <div className="flex gap-2">
-        <button className="btn bg-white text-black" type="submit">
+        <button onClick={()=>dispatch(OpenModal())} className="btn bg-white text-black" type="submit">
           <BsFillPlayFill className="h-4 w-4 text-black md:h-8 md:w-8"/>Play
           </button>
 
