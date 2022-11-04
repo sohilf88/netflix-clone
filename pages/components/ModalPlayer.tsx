@@ -6,23 +6,23 @@ import ReactPlayer from 'react-player';
 import {IoAdd} from "react-icons/io5";
 import {BiLike} from "react-icons/bi"
 import {FaPlay} from "react-icons/fa"
+import {useSelector,useDispatch} from "react-redux"
+import {RootState} from "../../store/store"
+import {OpenModal,CloseModal} from "../features/modalState"
 
 
 const ModalPlayer = () => {
-    const [open,setOpen]=useState(true)
-    const [close,setClose]=useState(false)
-
-    const handleClose=()=>{
-      setClose(false)
-    }
+  const Open =useSelector((store:RootState)=>store.ModalState.value)
+  const dispatch=useDispatch()
+ 
 
   return (
     <MuiModal
     className="w-full max-w-5xl fixed !top-7 left-0 right-0 mx-auto rounded overflow-hidden overflow-y-scroll"
-    open={open} onClose={handleClose}>
+    open={Open} onClose={()=>dispatch(CloseModal())}>
         <>
         
-        <button onClick={()=>setOpen(false)} className="modal-btn absolute right-5 top-3 z-50">
+        <button onClick={()=>dispatch(CloseModal())} className="modal-btn absolute right-5 top-3 z-50">
           <IoCloseSharp className="w-7 h-7 text-black transition hover:rotate-180"/>
         </button>
         <div className="relative pt-[56.25%]">
@@ -34,7 +34,7 @@ const ModalPlayer = () => {
           controls={true}
           muted={false}
           pip={true}
-          playing={true}
+          playing={false}
           />
           
           

@@ -4,12 +4,16 @@ import {useState,useEffect} from "react";
 import Image from "next/image"
 import {BsFillPlayFill} from "react-icons/bs";
 import {HiInformationCircle} from "react-icons/hi";
+import { useDispatch } from 'react-redux';
+import {stateOfMovie} from "../features/movieState"
+
 
 
 type propApi={ 
   netflixOriginals:apiResponse[]
 }
 const Banner = ({netflixOriginals}:propApi) => {
+  const dispatch=useDispatch();
   
   const[randomBanner, setRandomBanner]=useState<apiResponse | null>(null);
   useEffect(()=>{
@@ -34,7 +38,7 @@ const Banner = ({netflixOriginals}:propApi) => {
           </button>
 
 
-          <button className="btn bg-[gray]/70" type="submit"> 
+          <button onClick={()=>dispatch(stateOfMovie(randomBanner))} className="btn bg-[gray]/70" type="submit"> 
           <HiInformationCircle className="h-4 w-4 text-white md:h-8 md:w-8"/>
           
           More info</button>
